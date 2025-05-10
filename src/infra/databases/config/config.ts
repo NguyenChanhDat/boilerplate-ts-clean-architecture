@@ -3,6 +3,9 @@ import { DataSource } from 'typeorm';
 import { UserModel } from '../models/UserModel';
 import { BodyTrackModel } from '../models/BodyTrackModel';
 import { ExerciseModel } from '../models/ExerciseModel';
+import { PlanModel } from '../models/PlanModel';
+import { SessionModel } from '../models/SessionModel';
+import { SetModel } from '../models/SetModel';
 
 export const MssqlConfig = {
   user: process.env.DB_USER || 'sa',
@@ -24,5 +27,12 @@ export const typeormConfig = new DataSource({
   options: {
     trustServerCertificate: true,
   },
-  entities: [UserModel, BodyTrackModel, ExerciseModel],
+  entities: [
+    UserModel,
+    BodyTrackModel,
+    ExerciseModel,
+    PlanModel,
+    SessionModel,
+    SetModel,
+  ],
 });

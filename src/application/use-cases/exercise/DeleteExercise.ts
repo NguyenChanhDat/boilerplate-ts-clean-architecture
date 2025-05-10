@@ -1,6 +1,6 @@
 import { IExerciseServices } from '@application/services/interfaces/IExerciseServices';
 import { IDeleteExercise } from './interfaces/IDeleteExercise';
-import { exerciseServicesGlobal } from '@infra/locator/ExerciseServicesGlobal';
+import { exerciseServicesGlobal } from '@infra/locator/services/ExerciseServicesGlobal';
 
 export class DeleteExercise implements IDeleteExercise {
   constructor(

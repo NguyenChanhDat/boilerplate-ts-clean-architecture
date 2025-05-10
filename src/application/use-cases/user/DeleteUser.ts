@@ -1,6 +1,6 @@
 import { IDeleteUser } from './interface/IDeleteUser';
 import { IUserServices } from '../../services/interfaces/IUserServices';
-import { userServicesGlobal } from '@infra/locator/UserServicesGlobal';
+import { userServicesGlobal } from '@infra/locator/services/UserServicesGlobal';
 
 export class DeleteUser implements IDeleteUser {
   constructor(

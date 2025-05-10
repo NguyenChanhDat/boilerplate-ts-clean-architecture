@@ -15,7 +15,7 @@ import {
   deletePlanGlobal,
   getPlanGlobal,
   updatePlanGlobal,
-} from '../../../../infra/locator/PlanUseCaseGlobal';
+} from '../../../../infra/locator/use-cases/PlanUseCaseGlobal';
 
 export class PlanController implements IPlanController {
   constructor(

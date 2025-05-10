@@ -1,13 +1,19 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  BaseEntity,
+} from 'typeorm';
 import { UserModel } from './UserModel';
 import { MembershipTierEnum } from '../../../shared/enums/MembershipTierEnum';
 
 @Entity('Plans')
-export class PlanModel {
+export class PlanModel extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @ManyToOne(() => UserModel, (user) => user.id)
+  @Column({ type: 'int', nullable: false })
   userId!: number;
 
   @Column({ type: 'nvarchar', nullable: false })
@@ -15,4 +21,8 @@ export class PlanModel {
 
   @Column({ type: 'nvarchar', nullable: false })
   membershipTier!: MembershipTierEnum;
+
+  // Relationships
+  @ManyToOne(() => UserModel, (user) => user.id)
+  user!: number[];
 }

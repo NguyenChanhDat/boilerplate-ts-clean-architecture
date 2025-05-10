@@ -1,8 +1,8 @@
 import { IPasswordServices } from '../../services/IPasswordServices';
 import { ILogin } from './interface/ILogin';
 import { IUserServices } from '../../services/interfaces/IUserServices';
-import { userServicesGlobal } from '@infra/locator/UserServicesGlobal';
-import { passwordServicesGlobal } from '@infra/locator/PasswordServicesGlobal';
+import { userServicesGlobal } from '@infra/locator/services/UserServicesGlobal';
+import { passwordServicesGlobal } from '@infra/locator/services/PasswordServicesGlobal';
 
 export class LoginServices implements ILogin {
   constructor(

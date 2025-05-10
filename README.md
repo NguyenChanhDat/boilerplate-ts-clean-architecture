@@ -13,46 +13,33 @@ A BE Repo for healthcare services system in TS implements Clean Architecture. Yo
 
 ## DEVELOPING
 
+**Compatible with both Win and Linux**
+I did already have some effort on running local both on Win and Linux. So basically you can use below script for your devices as long as it's either Win or Linux
+
 ### Setup
 
-- For Linux
+- Install NVM (Node Version Manager) && node
 
 ```bash
-nvm install && npm install && npm run setup-linux
+nvm install && npm install
 ```
 
-- For Win
+- Running Setup
 
 ```bash
-nvm install && npm install && npm run setup-win
+npm run setup
 ```
 
 ### Start local server
 
-- For Linux
-
 ```bash
-npm run dev-linux
-```
-
-- For Win
-
-```bash
-npm run dev-win
+npm run dev
 ```
 
 ## TESTING
 
 ### Unit testing
 
-- For Linux
-
 ```bash
-npm run unit-test-linux
-```
-
-- For Win
-
-```bash
-npm run unit-test-win
+npm run unit-test
 ```

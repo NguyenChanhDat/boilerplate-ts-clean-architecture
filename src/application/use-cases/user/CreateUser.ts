@@ -1,10 +1,9 @@
-import { User } from '@domain/entities/User';
 import { CreateUserDto } from '../../dto/user/createUserDto';
 import { ICreateUser } from './interface/ICreateUser';
 import { IUserServices } from '../../services/interfaces/IUserServices';
-import { userServicesGlobal } from '@infra/locator/UserServicesGlobal';
+import { userServicesGlobal } from '@infra/locator/services/UserServicesGlobal';
 import { IPasswordServices } from '@application/services/IPasswordServices';
-import { passwordServicesGlobal } from '@infra/locator/PasswordServicesGlobal';
+import { passwordServicesGlobal } from '@infra/locator/services/PasswordServicesGlobal';
 import { MembershipTierEnum } from '@shared/enums/MembershipTierEnum';
 
 export class CreateUser implements ICreateUser {
@@ -19,17 +18,21 @@ export class CreateUser implements ICreateUser {
   };
   public execute = async (
     inputInfor: CreateUserDto
-  ): Promise<Omit<User, 'id'>> => {
+  ): Promise<Omit<CreateUserDto, 'password'>> => {
+    const { username, password } = inputInfor;
+    const passwordHashed = await this.returnPasswordHashed(password);
+
     const userToBeCreate: CreateUserDto = {
-      username: inputInfor.username,
-      password: inputInfor.password,
+      username,
+      password: passwordHashed,
       membershipTier: MembershipTierEnum.BASIC,
     };
-    userToBeCreate.password = await this.returnPasswordHashed(
-      inputInfor.password
-    );
 
-    await this.userServices.createEntity(inputInfor);
-    return inputInfor;
+    await this.userServices.createEntity(userToBeCreate);
+
+    return {
+      username,
+      membershipTier: MembershipTierEnum.BASIC,
+    };
   };
 }

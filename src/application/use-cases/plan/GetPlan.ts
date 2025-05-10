@@ -1,6 +1,6 @@
 import { Plan } from '@domain/entities/Plan';
 import { IGetPlan } from './interfaces/IGetPlan';
-import { planServicesGlobal } from '@infra/locator/PlanServicesGlobal';
+import { planServicesGlobal } from '@infra/locator/services/PlanServicesGlobal';
 import { IPlanServices } from '@application/services/interfaces/IPlanServices';
 
 export class GetPlan implements IGetPlan {

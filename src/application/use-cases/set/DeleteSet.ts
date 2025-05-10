@@ -1,6 +1,6 @@
 import { ISetServices } from '@application/services/interfaces/ISetServices';
 import { IDeleteSet } from './SetUseCaseExportDir';
-import { setServicesGlobal } from '@infra/locator/SetServicesGlobal';
+import { setServicesGlobal } from '@infra/locator/services/SetServicesGlobal';
 
 export class DeleteSet implements IDeleteSet {
   constructor(private readonly setServices: ISetServices = setServicesGlobal) {}

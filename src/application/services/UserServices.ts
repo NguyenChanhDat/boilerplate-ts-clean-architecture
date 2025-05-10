@@ -2,7 +2,7 @@ import { CreateUserDto } from '../dto/user/createUserDto';
 import { UpdateUserDto } from '../dto/user/updateUserDto';
 import { IUserServices } from './interfaces/IUserServices';
 import { User } from '../../domain/entities/User';
-import { userRepositoryGlobal } from '../../infra/locator/UserRepositoryGlobal';
+import { userRepositoryGlobal } from '../../infra/locator/repository/UserRepositoryGlobal';
 import { IUserRepository } from '../../domain/repositories/IUserRepository';
 
 export class UserServices implements IUserServices {

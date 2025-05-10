@@ -1,8 +1,8 @@
 import { IUpdateUser } from './interface/IUpdateUser';
 import { IUserServices } from '../../services/interfaces/IUserServices';
-import { userServicesGlobal } from '@infra/locator/UserServicesGlobal';
+import { userServicesGlobal } from '@infra/locator/services/UserServicesGlobal';
 import { IPasswordServices } from '@application/services/IPasswordServices';
-import { passwordServicesGlobal } from '@infra/locator/PasswordServicesGlobal';
+import { passwordServicesGlobal } from '@infra/locator/services/PasswordServicesGlobal';
 import { User } from '@domain/entities/User';
 
 export class UpdateUser implements IUpdateUser {

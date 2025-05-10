@@ -1,5 +1,5 @@
 import { IUpdateSet } from './interfaces/IUpdateSet';
-import { setServicesGlobal } from '@infra/locator/SetServicesGlobal';
+import { setServicesGlobal } from '@infra/locator/services/SetServicesGlobal';
 import { ISetServices } from '@application/services/interfaces/ISetServices';
 import { Set } from '@domain/entities/Set';
 

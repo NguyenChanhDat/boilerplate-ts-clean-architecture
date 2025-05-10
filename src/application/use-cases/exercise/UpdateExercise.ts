@@ -1,5 +1,5 @@
 import { IUpdateExercise } from './interfaces/IUpdateExercise';
-import { exerciseServicesGlobal } from '@infra/locator/ExerciseServicesGlobal';
+import { exerciseServicesGlobal } from '@infra/locator/services/ExerciseServicesGlobal';
 import { IExerciseServices } from '@application/services/interfaces/IExerciseServices';
 import { Exercise } from '@domain/entities/Exercise';
 

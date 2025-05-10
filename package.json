@@ -16,7 +16,10 @@
     "setup-streaming-win": "npm run setup-win && powershell ./tools/setup/setupCdcTools.ps1",
     "build": "concurrently \"swc src -d dist -D\" \"swc __test__ -d dist -D\"",
     "prepare": "husky",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "unit-test": "node scripts/run-tests.js",
+    "dev": "node scripts/run-dev.js",
+    "setup": "node scripts/run-setup.js"
   },
   "author": "Dat NguyenChanh",
   "license": "ISC",

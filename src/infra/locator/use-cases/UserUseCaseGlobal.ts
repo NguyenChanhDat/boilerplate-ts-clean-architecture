@@ -7,7 +7,7 @@ import {
   IGetUser,
   IUpdateUser,
   UpdateUser,
-} from '../../application/use-cases/user/UserUseCaseExportDir';
+} from '../../../application/use-cases/user/UserUseCaseExportDir';
 
 export const getUserGlobal: IGetUser = new GetUser();
 export const createUserGlobal: ICreateUser = new CreateUser();

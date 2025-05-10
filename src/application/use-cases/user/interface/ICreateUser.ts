@@ -1,4 +1,4 @@
-import { CreateUserDto } from '../../../dto/user/createUserDto'
+import { CreateUserDto } from '../../../dto/user/createUserDto';
 export interface ICreateUser {
-    execute(inputInfor: CreateUserDto): Promise<CreateUserDto>
+  execute(inputInfor: CreateUserDto): Promise<Omit<CreateUserDto, 'password'>>;
 }

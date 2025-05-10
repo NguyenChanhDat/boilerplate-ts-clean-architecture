@@ -15,7 +15,7 @@ import {
   deleteUserGlobal,
   getUserGlobal,
   updateUserGlobal,
-} from '../../../../infra/locator/UserUseCaseGlobal';
+} from '../../../../infra/locator/use-cases/UserUseCaseGlobal';
 
 export class UserController implements IUserController {
   constructor(

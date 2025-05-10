@@ -1,6 +1,6 @@
 import { IPlanServices } from '@application/services/interfaces/IPlanServices';
 import { IDeletePlan } from './interfaces/IDeletePlan';
-import { planServicesGlobal } from '@infra/locator/PlanServicesGlobal';
+import { planServicesGlobal } from '@infra/locator/services/PlanServicesGlobal';
 
 export class DeletePlan implements IDeletePlan {
   constructor(

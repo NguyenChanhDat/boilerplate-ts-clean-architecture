@@ -1,7 +1,7 @@
 import { CreateSetDto } from '../dto/set/CreateSetDto';
 import { UpdateSetDto } from '../dto/set/UpdateSetDto';
 import { ISetServices } from './interfaces/ISetServices';
-import { setRepositoryGlobal } from '@infra/locator/RepositoryGlobal';
+import { setRepositoryGlobal } from '@infra/locator/repository/RepositoryGlobal';
 import { ISetRepository } from '@domain/repositories/ISetRepository';
 import { Set } from '@domain/entities/Set';
 

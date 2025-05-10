@@ -2,10 +2,17 @@ import { IBodyTrackRepository } from '../../../../domain/repositories/IBodyTrack
 import { BodyTrack } from '../../../../domain/entities/BodyTrack';
 import { BodyTrackModel } from '@infra/databases/models/BodyTrackModel';
 import { appDataSource } from '@infra/databases/dataSource/BootstrapTypeOrm';
+import { Repository } from 'typeorm';
 
 export class BodyTrackTypeOrmRepository implements IBodyTrackRepository {
+  constructor(
+    private readonly repository: Repository<BodyTrack> = appDataSource.getRepository(
+      BodyTrackModel
+    )
+  ) {}
+
   async createEntity(bodyTrack: BodyTrack): Promise<void> {
-    await appDataSource.getRepository(BodyTrackModel).save(bodyTrack);
+    await this.repository.save(bodyTrack);
   }
 
   async updateEntity(
@@ -18,7 +25,7 @@ export class BodyTrackTypeOrmRepository implements IBodyTrackRepository {
   }
 
   async deleteEntity(bodyTrackId: number): Promise<void> {
-    await appDataSource.getRepository(BodyTrackModel).delete(bodyTrackId);
+    await this.repository.delete(bodyTrackId);
   }
 
   async getEntityById(bodyTrackId: number): Promise<BodyTrack | null> {
@@ -28,6 +35,6 @@ export class BodyTrackTypeOrmRepository implements IBodyTrackRepository {
   }
 
   async showListEntity(): Promise<BodyTrack[] | null> {
-    return await appDataSource.getRepository(BodyTrackModel).find();
+    return await this.repository.find();
   }
 }

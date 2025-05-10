@@ -1,8 +1,15 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  BaseEntity,
+} from 'typeorm';
 import { UserModel } from './UserModel';
+import { User } from '@domain/entities/User';
 
 @Entity('BodyTracks')
-export class BodyTrackModel {
+export class BodyTrackModel extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 
@@ -17,4 +24,8 @@ export class BodyTrackModel {
 
   @ManyToOne(() => UserModel, (user) => user.id)
   userId!: number;
+
+  // Relationships
+  @ManyToOne(() => UserModel, (user) => user.id)
+  user!: User[];
 }

@@ -1,13 +1,21 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
-import { PlanModel } from './PlanModel';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  BaseEntity,
+} from 'typeorm';
 import { ExerciseModel } from './ExerciseModel';
+import { SessionModel } from './SessionModel';
+import { Session } from '@domain/entities/Session';
+import { Exercise } from '@domain/entities/Exercise';
 
 @Entity('Sets')
-export class SetModel {
+export class SetModel extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @ManyToOne(() => PlanModel, (plan) => plan.id)
+  @ManyToOne(() => SessionModel, (session) => session.id)
   sessionId!: number;
 
   @ManyToOne(() => ExerciseModel, (exercise) => exercise.id)
@@ -21,4 +29,11 @@ export class SetModel {
 
   @Column({ type: 'int', nullable: false })
   restTime!: number;
+
+  // Relationships
+  @ManyToOne(() => SessionModel, (session) => session.id)
+  session!: Session[];
+
+  @ManyToOne(() => ExerciseModel, (exercise) => exercise.id)
+  exercise!: Exercise[];
 }

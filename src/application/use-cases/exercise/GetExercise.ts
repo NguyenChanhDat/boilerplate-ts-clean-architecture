@@ -1,6 +1,6 @@
 import { Exercise } from '@domain/entities/Exercise';
 import { IGetExercise } from './interfaces/IGetExercise';
-import { exerciseServicesGlobal } from '@infra/locator/ExerciseServicesGlobal';
+import { exerciseServicesGlobal } from '@infra/locator/services/ExerciseServicesGlobal';
 import { IExerciseServices } from '@application/services/interfaces/IExerciseServices';
 
 export class GetExercise implements IGetExercise {

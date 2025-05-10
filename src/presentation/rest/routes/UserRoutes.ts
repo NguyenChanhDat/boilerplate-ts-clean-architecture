@@ -1,6 +1,6 @@
 import express from 'express';
 import { IUserController } from '../controllers/user/IUserControllers';
-import { userControllersGlobal } from '../../../infra/locator/UserControllersGlobal';
+import { userControllersGlobal } from '../../../infra/locator/controllers/UserControllersGlobal';
 
 const router = express.Router();
 

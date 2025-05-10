@@ -1,6 +1,6 @@
 import express from 'express';
 import { IPlanController } from '../controllers/plan/IPlanController';
-import { planControllersGlobal } from '@infra/locator/PlanControllersGlobal';
+import { planControllersGlobal } from '@infra/locator/controllers/PlanControllersGlobal';
 
 const router = express.Router();
 

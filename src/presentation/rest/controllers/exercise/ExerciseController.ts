@@ -15,7 +15,7 @@ import {
   deleteExerciseGlobal,
   getExerciseGlobal,
   updateExerciseGlobal,
-} from '../../../../infra/locator/ExerciseUseCaseGlobal';
+} from '../../../../infra/locator/use-cases/ExerciseUseCaseGlobal';
 
 export class ExerciseController implements IExerciseController {
   constructor(

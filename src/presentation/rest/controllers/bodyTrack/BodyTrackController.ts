@@ -15,7 +15,7 @@ import {
   getBodyTrackGlobal,
   updateBodyTrackGlobal,
   deleteBodyTrackGlobal,
-} from '../../../../infra/locator/BodyTrackUseCaseGlobal';
+} from '../../../../infra/locator/use-cases/BodyTrackUseCaseGlobal';
 
 export class BodyTrackController implements IBodyTrackController {
   constructor(
@@ -31,7 +31,7 @@ export class BodyTrackController implements IBodyTrackController {
       await this.createBodyTrack.execute(bodyTrackInput);
       res
         .status(BodyTrackApiStatus.OK.status)
-        .send(BodyTrackApiStatus.OK.message);
+        .send(BodyTrackApiStatus.OK.message + ` ${bodyTrackInput}`);
     } catch (error) {
       console.error(error);
       res
@@ -72,12 +72,12 @@ export class BodyTrackController implements IBodyTrackController {
 
   public get = async (req: Request, res: Response): Promise<void> => {
     try {
-      const bodyTrackByInput: BodyTrack | BodyTrack[] | null =
+      const bodyTrackData: BodyTrack | BodyTrack[] | null =
         'id' in req.query
           ? await this.getBodyTrack.getById(Number(req.query.id))
           : await this.getBodyTrack.getAll();
       res.status(BodyTrackApiStatus.OK.status);
-      res.send(bodyTrackByInput);
+      res.send(bodyTrackData);
     } catch (error) {
       console.error(error);
       res

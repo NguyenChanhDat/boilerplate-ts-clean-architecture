@@ -134,3 +134,30 @@ export const SetApiStatus: IApiStatusObj = {
     message: 'Access Denied',
   },
 };
+
+export const SessionApiStatus: IApiStatusObj = {
+  INTERNAL_SERVER_ERROR: {
+    status: 500,
+    message: 'Server Error',
+  },
+  BAD_REQUEST: {
+    status: 400,
+    message: 'Bad Request',
+  },
+  NOT_FOUND: {
+    status: 404,
+    message: 'Session not Found',
+  },
+  OK: {
+    status: 200,
+    message: 'Action Completed',
+  },
+  UNPROCESSABLE_ENTITY: {
+    status: 422,
+    message: 'Session data is invalid!',
+  },
+  UNAUTHORIZED: {
+    status: 401,
+    message: 'Access Denied',
+  },
+};

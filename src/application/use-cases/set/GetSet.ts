@@ -1,6 +1,6 @@
 import { Set } from '@domain/entities/Set';
 import { IGetSet } from './SetUseCaseExportDir';
-import { setServicesGlobal } from '@infra/locator/SetServicesGlobal';
+import { setServicesGlobal } from '@infra/locator/services/SetServicesGlobal';
 import { ISetServices } from '@application/services/interfaces/ISetServices';
 
 export class GetSet implements IGetSet {

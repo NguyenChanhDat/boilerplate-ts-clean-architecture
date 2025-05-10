@@ -31,6 +31,11 @@ describe('CreateUser', () => {
 
     await createUser.execute(userData);
 
-    expect(mockUserServices.createEntity).toHaveBeenCalledWith(userData);
+    expect(mockUserServices.createEntity).toHaveBeenCalled();
+    const calledArg = mockUserServices.createEntity.mock.calls[0][0];
+
+    expect(calledArg.username).toBe(userData.username);
+    expect(calledArg.membershipTier).toBe(userData.membershipTier);
+    expect(calledArg.password).not.toBe(userData.password); // password should be hashed
   });
 });

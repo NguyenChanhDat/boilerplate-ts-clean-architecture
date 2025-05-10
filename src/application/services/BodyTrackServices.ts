@@ -1,7 +1,7 @@
 import { CreateBodyTrackDto } from '../dto/bodyTrack/CreateBodyTrackDto';
 import { UpdateBodyTrackDto } from '../dto/bodyTrack/UpdateBodyTrackDto';
 import { IBodyTrackServices } from './interfaces/IBodyTrackServices';
-import { bodyTrackRepositoryGlobal } from '@infra/locator/RepositoryGlobal';
+import { bodyTrackRepositoryGlobal } from '@infra/locator/repository/RepositoryGlobal';
 import { IBodyTrackRepository } from '@domain/repositories/IBodyTrackRepository';
 import { BodyTrack } from '@domain/entities/BodyTrack';
 
